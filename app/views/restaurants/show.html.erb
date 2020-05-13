@@ -1,0 +1,20 @@
+
+<div class ="container">
+<p>Name: <%= @restaurant.name %></p>
+<p>Category: <%= @restaurant.category %></p>
+<p>Address: <%= @restaurant.address %></p>
+<p>Phone number: <%= @restaurant.phone_number %></p>
+
+
+<h5>Reviews</h5>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Leave review", new_restaurant_review_path(@restaurant) %>
+</div>
+
+
